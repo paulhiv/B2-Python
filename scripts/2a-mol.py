@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # Description: game where you guess a number between 0 and 100
-# Author: Paul hivert
+# Author: Paul Hivert
 # Date: 23/10/2018
 
 import random
@@ -29,7 +29,7 @@ while success is not True:
 
         except Exception as e:
             sys.stdout.write(str(e))
-            sys.stdout.write("écrivez votre numéro à la fin du ficher 2a-mol.py vous avez 5 secondes\n")
+            sys.stdout.write(" écrivez votre numéro à la fin du ficher 2a-mol.py, se rafraichi toutes les 5 secondes\n")
             time.sleep(5)
 
             with open("2a-write.txt", "r") as f:
