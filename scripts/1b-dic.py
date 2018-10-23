@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 # Description: inputs a list of names and outputs them
 # Author: Paul hivert
 # Date: 15/10/2018

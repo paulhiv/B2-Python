@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 # Description: inputs a name paired with a grade and outputs the class average
 # Author: Paul hivert
 # Date: 15/10/2018

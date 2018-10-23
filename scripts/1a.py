@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 # Description: gives the sum of 2 numbers
 # Author: Paul hivert
 # Date: 15/10/2018

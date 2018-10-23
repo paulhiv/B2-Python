@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 # Description: game where you guess a number between 0 and 100
 # Author: Paul hivert
 # Date: 15/10/2018
