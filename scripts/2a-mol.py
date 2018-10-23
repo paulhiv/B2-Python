@@ -3,50 +3,51 @@
 # Author: Paul hivert
 # Date: 23/10/2018
 
-
 import random
 import time
+import sys
 
 secret = random.randint(1, 100)
+inputCheck = False
 success = False
 big = "too big\n"
-small = "too small"
-win = "you win"
+small = "too small\n"
+win = "you win\n"
+
 while success is not True:
-    f = open("2a-write.txt", "r")
+    with open("2a-write.txt", "r") as f:
+        lst = f.readlines()
+        lastLine = lst[len(lst) - 1]
 
-    lst = f.readlines()
-    lastLine = lst[len(lst) - 1]
-    f.close()
-    f = open("2a-write.txt", "w")
-    f.write("\nbienvenue au jeu du + ou -\n")
-    f.close()
+    with open("2a-write.txt", "w") as f:
+        f.write("bienvenue au jeu du + ou -\n")
 
-    try:
-        lastLine == int(lastLine)
-    except Exception as e:
-            print(str(e))
-            print("écrivez votre numéro a la fin du ficher 2a-mol.py vous avez 10 secondes\n")
-            time.sleep(10)
-            f = open("2a-write.txt", "r")
-            lst = f.readlines()
-            f.close()
-            lastLine = lst[len(lst) - 1]
+    while inputCheck is not True:
+        try:
+            lastLine = int(lastLine)
+            inputCheck = True
 
-    lastLine = int(lastLine)
+        except Exception as e:
+            sys.stdout.write(str(e))
+            sys.stdout.write("écrivez votre numéro à la fin du ficher 2a-mol.py vous avez 5 secondes\n")
+            time.sleep(5)
+
+            with open("2a-write.txt", "r") as f:
+                lst = f.readlines()
+                lastLine = lst[len(lst) - 1]
+
+    if inputCheck is True:
+        inputCheck = False
 
     if lastLine == secret:
         with open("2a-write.txt", "w") as f:
             f.write(win)
-            f.write("\n")
         success = True
 
     elif lastLine < secret:
         with open("2a-write.txt", "w") as f:
             f.write(small)
-            f.write("\n")
 
     elif lastLine > secret:
         with open("2a-write.txt", "w") as f:
             f.write(big)
-            f.write("\n")
