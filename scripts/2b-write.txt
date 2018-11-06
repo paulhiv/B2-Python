@@ -1,0 +1,2 @@
+try number: 77
+number that was guessed: 73
